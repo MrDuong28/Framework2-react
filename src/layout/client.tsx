@@ -3,7 +3,6 @@ import Header from "./client/header";
 import Footer from "./client/footer";
 
 import { Outlet } from "react-router-dom";
-import Banner from "./client/banner";
 
 type Props = {};
 
@@ -13,6 +12,7 @@ const Client = (props: Props) => {
       <Header />
 
       <Outlet />
+
       <div className="mt-[px]">
         <Footer />
       </div>

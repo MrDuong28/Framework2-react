@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 type Props = {};
 
@@ -80,7 +80,9 @@ const Header = (props: Props) => {
               stroke-linecap="round"
             />
           </svg>
-          <p className="text-white ">Account</p>
+          <p className="text-white ">
+            <a href="/admin">Account</a>
+          </p>
         </div>
         <div
           className="flex gap-[10.64px] mt-[47px] ml-[30.62px]
@@ -114,7 +116,7 @@ const Header = (props: Props) => {
       <div className="ml-[100px]">
         <div className="dropdown ">
           <button className="dropbtn flex ">
-            Beleuchtung
+            <NavLink to={"/"}>Beleuchtung</NavLink>
             <svg
               className="w-2.5 h-2.5 ms-3 mt-[8px] "
               aria-hidden="true"
@@ -152,8 +154,8 @@ const Header = (props: Props) => {
             </svg>
           </button>
           <div className="dropdown-content">
-            <a href="#link1">
-              <li>Komplettsets</li>{" "}
+            <a href="/product">
+              <li>Komplettsets</li>
             </a>
           </div>
         </div>

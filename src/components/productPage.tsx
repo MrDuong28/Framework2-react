@@ -1,24 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import cat1 from "../layout/client/image/cat1.png";
 import cat2 from "../layout/client/image/cat2.png";
 import cat3 from "../layout/client/image/cat3.png";
 import cat4 from "../layout/client/image/cat4.png";
-import pro1 from "../layout/client/image/pro1.png";
-import pro2 from "../layout/client/image/pro2.png";
-import pro3 from "../layout/client/image/pro3.png";
-import pro4 from "../layout/client/image/pro4.png";
-import pro5 from "../layout/client/image/pro5.png";
-import pro6 from "../layout/client/image/pro6.png";
-import pro7 from "../layout/client/image/pro7.png";
-import pro8 from "../layout/client/image/pro8.png";
-import pro9 from "../layout/client/image/pro9.png";
-
 import productImg6 from "../layout/client/image/img6.png";
 import icon3 from "../layout/client/image/icon3.png";
+import { IProduct } from "../interface/product";
+import { Link } from "react-router-dom";
 
-type Props = {};
+type Props = {
+  products: IProduct[];
+  onDelete: (id: number | string) => void;
+};
 
-const ProductPage = (props: Props) => {
+const ProductPage = ({ products, onDelete }: Props) => {
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategories((prev) =>
+      prev.includes(category)
+        ? prev.filter((cat) => cat !== category)
+        : [...prev, category]
+    );
+  };
+
+  const filteredProducts = selectedCategories.length
+    ? products.filter((product) =>
+        selectedCategories.includes(product.category)
+      )
+    : products;
+
   return (
     <div className="product-page">
       <div className="pro-title">Töpfe & Behälter</div>
@@ -30,7 +41,7 @@ const ProductPage = (props: Props) => {
         <div className="cat flex gap-[8px] items-center pl-[9px]">
           <img src={cat2} alt="" />
           <p>Runde Töpfe</p>
-        </div>{" "}
+        </div>
         <div className="cat flex gap-[8px] items-center pl-[9px]">
           <img src={cat3} alt="" />
           <p>Untersetzer</p>
@@ -65,105 +76,66 @@ const ProductPage = (props: Props) => {
           </select>
         </div>
       </div>
-      <div className="flex gap-[100px] ml-[100px]">
-        <div className="grid grid-cols-3 gap-[98px] ">
-          <div className="pro ">
-            <img src={pro1} alt="" />
-            <h3 className="pro-name">Square cultivation pots </h3>
-            <div className="flex gap-[5px]">
-              <p>$38.00</p>
-              <p className="line-through text-gray-500">$45.00</p>
+      <div className="flex ml-[100px] gap-[250px]">
+        <div className="product-left grid grid-cols-3 gap-[50px]">
+          {filteredProducts.map((product) => (
+            <div key={product.id} className="bg-white overflow-hidden">
+              <a href="/productdetail">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-[200px] h-[200px] object-cover transition-transform duration-300 ease-in-out transform hover:scale-110"
+                />
+              </a>
+              <div className="p-4">
+                <h3 className="text-lg font-bold">{product.name}</h3>
+                <p className="text-gray-600">${product.price}</p>
+                {/* <p className="text-gray-600">Category: {product.category}</p> */}
+              </div>
             </div>
-          </div>
-          <div className="pro">
-            <img src={pro2} alt="" />
-
-            <h3 className="pro-name">Round plant pots</h3>
-            <div className="flex gap-[5px]">
-              <p>$28.00</p>
-            </div>
-          </div>
-          <div className="pro">
-            <img src={pro3} alt="" />
-            <h3 className="pro-name">Square plant pots </h3>
-            <div className="flex gap-[5px]">
-              <p>$21.00</p>
-              <p className="line-through text-gray-500">$45.00</p>
-            </div>
-          </div>
-          <div className="pro">
-            <img src={pro4} alt="" />
-            <h3 className="pro-name">Mesh pots round </h3>
-            <div className="flex gap-[5px]">
-              <p>$45.00</p>
-            </div>
-          </div>
-          <div className="pro">
-            <img src={pro5} alt="" />
-            <h3 className="pro-name">Square cultivation pots </h3>
-            <div className="flex gap-[5px]">
-              <p>$23.00</p>
-              <p className="line-through text-gray-500">$45.00</p>
-            </div>
-          </div>
-          <div className="pro">
-            <img src={pro6} alt="" />
-            <h3 className="pro-name">Mess pot</h3>
-            <div className="flex gap-[5px]">
-              <p>$43.00</p>
-            </div>
-          </div>
-          <div className="pro">
-            <img src={pro7} alt="" />
-            <h3 className="pro-name">Square plant</h3>
-            <div className="flex gap-[5px]">
-              <p>$10.00</p>
-            </div>
-          </div>
-          <div className="pro">
-            <img src={pro8} alt="" />
-            <h3 className="pro-name">Round plant pot </h3>
-            <div className="flex gap-[5px]">
-              <p>$25.00</p>
-            </div>
-          </div>
-          <div className="pro">
-            <img src={pro9} alt="" />
-            <h3 className="pro-name">Square plant </h3>
-            <div className="flex gap-[5px]">
-              <p>$12.00</p>
-            </div>
-          </div>
+          ))}
         </div>
-        <div className="cate  mr-[100px]">
+        <div className="cate mr-[100px]">
           <h2>Kategorien</h2>
           <div className="flex items-center mb-4 ml-[10px] mt-[25px]">
             <input
               type="checkbox"
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 "
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              onChange={() => handleCategoryChange("Điện thoại")}
             />
-            <label className="ml-[5px]">Eckige Töpfe</label>
+            <label className="ml-[5px]">Điện thoại</label>
           </div>
           <div className="flex items-center mb-4 ml-[10px] mt-[25px]">
             <input
               type="checkbox"
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 "
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              onChange={() => handleCategoryChange("Tai nghe")}
             />
-            <label className="ml-[5px]">Runde Töpfe</label>
-          </div>{" "}
+            <label className="ml-[5px]">Tai nghe</label>
+          </div>
           <div className="flex items-center mb-4 ml-[10px] mt-[25px]">
             <input
               type="checkbox"
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 "
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              onChange={() => handleCategoryChange("Tay cầm")}
             />
-            <label className="ml-[5px]">Untersetzer</label>
-          </div>{" "}
+            <label className="ml-[5px]">Tay cầm</label>
+          </div>
           <div className="flex items-center mb-4 ml-[10px] mt-[27px]">
             <input
               type="checkbox"
-              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 "
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              onChange={() => handleCategoryChange("Bàn phím")}
             />
-            <label className="ml-[5px]">Pflanzschalen</label>
+            <label className="ml-[5px]">Bàn phím</label>
+          </div>
+          <div className="flex items-center mb-4 ml-[10px] mt-[27px]">
+            <input
+              type="checkbox"
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              onChange={() => handleCategoryChange("Laptop")}
+            />
+            <label className="ml-[5px]">Laptop</label>
           </div>
           <div className="grid-item">
             <img
@@ -222,7 +194,6 @@ const ProductPage = (props: Props) => {
       <div className="new3 flex ">
         Etwas abonnieren
         <div>
-          {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="27"
@@ -245,7 +216,7 @@ const ProductPage = (props: Props) => {
               stroke="#161819"
               stroke-width="4.67895"
             />
-          </svg>{" "}
+          </svg>
         </div>
       </div>
       <div className="new4 flex">
@@ -265,19 +236,19 @@ const ProductPage = (props: Props) => {
         </svg>
         <div className="">Unser Newsletter</div>
       </div>
-      <div className=" relative flex mb-[100px]">
+      <div className="relative flex mb-[100px]">
         <p className="news-text">
           Get weekly update about our product on your email, no spam guaranteed
           we promise ✌️
         </p>
-        <div className="relative w-[525px]  ">
+        <div className="relative w-[525px]">
           <input
             className="w-[508.446px] h-[62.386px] rounded-[3px] bg-white pl-4 pr-16 border border-gray-300 focus:outline-none"
             type="text"
-            placeholder="  ✉️       youremail123@gmail.com"
+            placeholder="✉️ youremail123@gmail.com"
           />
           <button
-            className=" mt-[20px] absolute right-[17px] top-[20%] email-btn"
+            className="mt-[20px] absolute right-[17px] top-[20%] email-btn"
             type="button"
             id="button-addon4"
             data-twe-ripple-init

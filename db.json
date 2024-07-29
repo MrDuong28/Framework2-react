@@ -1,0 +1,96 @@
+{
+  "products": [
+    {
+      "name": "Iphone 15 promax",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/305660/iphone-15-pro-max-gold-thumbnew-600x600.jpg",
+      "price": "850",
+      "category": "Điện thoại",
+      "id": "2"
+    },
+    {
+      "name": "Macbook Pro",
+      "image": "https://product.hstatic.net/1000259254/product/macbook_pro_m2_gray_-1_90ed3468b4f4462fb5a254bf8313795f_master.jpg",
+      "price": "800",
+      "category": "Laptop",
+      "id": "3"
+    },
+    {
+      "name": "Tay cầm Ps5",
+      "image": "https://www.droidshop.vn/wp-content/uploads/2022/03/Playstation-5-Tay-cam-PS5-Hong.jpg",
+      "price": "500",
+      "category": "Tay cầm",
+      "id": "4"
+    },
+    {
+      "name": "Bàn phím cơ K3",
+      "image": "https://seve7.vn/wp-content/uploads/2023/05/3-3-900x900.jpg",
+      "price": "300",
+      "category": "Bàn phím",
+      "id": "5"
+    },
+    {
+      "name": "Airpods Pro",
+      "image": "https://cdn.tgdd.vn/Products/Images/54/236026/airpods-pro-wireless-charge-apple-mwp22-ava-1-org.jpg",
+      "price": "400",
+      "category": "Tai nghe",
+      "id": "7"
+    },
+    {
+      "name": "Iphone 14 promax",
+      "image": "https://shopdunk.com/images/thumbs/0008092_iphone-14-pro-max-256gb.png",
+      "price": "500",
+      "category": "Điện thoại",
+      "id": "67ae"
+    },
+    {
+      "name": "Laptop Acer",
+      "image": "https://file.hstatic.net/200000722513/article/laptop-gaming_3c90b72fdfb1438ca435c82b16416b3c_323c8099e3b3409d97c208cc21d8e584_master.jpg",
+      "price": "500",
+      "category": "Laptop",
+      "id": "f07c"
+    },
+    {
+      "name": "Tay cầm ps4",
+      "image": "https://img.lazcdn.com/g/p/52873cf6a5040af0732ec77f606b9b63.png_720x720q80.png",
+      "price": "300",
+      "category": "Tay cầm",
+      "id": "8c92"
+    },
+    {
+      "name": "SPARTAN TC3218",
+      "image": "https://product.hstatic.net/200000420363/product/ban-phim-co-gaming-spartan-tc3218_e178f83dee794d999ac19dc0724be991.png",
+      "price": "200",
+      "category": "Bàn phím",
+      "id": "1b22"
+    },
+    {
+      "id": "9097",
+      "name": "Logitech G733 ",
+      "image": "https://hanoicomputercdn.com/media/product/56482_tai_nghe_gaming_logitech_g733_lightspeed_wireless_7_1_rgb_white_0002_3.jpg",
+      "price": "200",
+      "category": "Tai nghe"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Điện thoại",
+      "id": "8ae9"
+    },
+    {
+      "name": "Laptop",
+      "id": "8bef"
+    },
+    {
+      "id": "e1dc",
+      "name": "Tay cầm"
+    },
+    {
+      "name": "Bàn phím",
+      "id": "6e76"
+    },
+    {
+      "id": "b56c",
+      "name": "Tai nghe"
+    }
+  ]
+}
