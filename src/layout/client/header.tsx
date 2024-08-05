@@ -1,17 +1,29 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 type Props = {};
 
 const Header = (props: Props) => {
+  const { register, handleSubmit } = useForm();
+  const navigate = useNavigate();
+  const onSubmit = (data: any) => {
+    const { keywords } = data;
+
+    navigate(`/search?keyword=${keywords}`);
+  };
   return (
     <div className="header">
       <div className="header1 flex">
-        <div className="relative w-[525px] pt-[42px]  ml-[250px]">
+        <form
+          className="relative w-[525px] pt-[42px]  ml-[250px]"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <input
+            {...register("keywords")}
             className="w-full h-[42.962px] rounded-[3px] bg-white pl-4 pr-16 border border-gray-300 focus:outline-none"
             type="text"
-            placeholder="Suchen Sie nach Produkten, Marken und mehr"
+            placeholder="Tìm kiếm theo sản phẩm, nhãn hiệu và hơn thế nữa"
           />
           <button
             className=" float-right mt-[20px] absolute right-1 top-1/2 transform -translate-y-1/2 flex items-center rounded-[3px] bg-primary px-5 py-1 text-xs font-medium uppercase leading-normal text-black shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
@@ -36,7 +48,7 @@ const Header = (props: Props) => {
               </svg>
             </span>
           </button>
-        </div>
+        </form>
         <div className="dropdown1 pt-[35px] ml-[100px] mr-[120px]">
           <button className="dropbtn flex">
             En
@@ -80,8 +92,8 @@ const Header = (props: Props) => {
               stroke-linecap="round"
             />
           </svg>
-          <p className="text-white ">
-            <a href="/admin">Account</a>
+          <p className="text-white mt-[2px] ">
+            <a href="/register">Tài khoản</a>
           </p>
         </div>
         <div
@@ -107,7 +119,7 @@ const Header = (props: Props) => {
               stroke-width="2.19112"
             />
           </svg>
-          <p className="text-white ">Cart</p>
+          <p className="text-white pt-[1px]">Giỏ hàng</p>
         </div>
       </div>
       <div>
@@ -116,7 +128,7 @@ const Header = (props: Props) => {
       <div className="ml-[100px]">
         <div className="dropdown ">
           <button className="dropbtn flex ">
-            <NavLink to={"/"}>Beleuchtung</NavLink>
+            <NavLink to={"/"}>Thắp sáng</NavLink>
             <svg
               className="w-2.5 h-2.5 ms-3 mt-[8px] "
               aria-hidden="true"
@@ -136,7 +148,7 @@ const Header = (props: Props) => {
         </div>
         <div className="dropdown ">
           <button className="dropbtn flex">
-            Growbox
+            Hộp trồng trọt
             <svg
               className="w-2.5 h-2.5 ms-3 mt-[8px] "
               aria-hidden="true"
@@ -155,13 +167,13 @@ const Header = (props: Props) => {
           </button>
           <div className="dropdown-content">
             <a href="/product">
-              <li>Komplettsets</li>
+              <li>Bộ hoàn chỉnh</li>
             </a>
           </div>
         </div>
         <div className="dropdown ">
           <button className="dropbtn flex">
-            Dünger
+            Phân bón
             <svg
               className="w-2.5 h-2.5 ms-3 mt-[8px] "
               aria-hidden="true"
@@ -181,7 +193,7 @@ const Header = (props: Props) => {
         </div>
         <div className="dropdown  ">
           <button className="dropbtn flex">
-            Erde & Substrate
+            Đất & chất nền
             <svg
               className="w-2.5 h-2.5 ms-3 mt-[8px] "
               aria-hidden="true"
@@ -201,7 +213,7 @@ const Header = (props: Props) => {
         </div>
         <div className="dropdown ">
           <button className="dropbtn flex">
-            Töpfe & Behälter
+            Chậu & Hộp đựng
             <svg
               className="w-2.5 h-2.5 ms-3 mt-[8px] "
               aria-hidden="true"
@@ -220,22 +232,22 @@ const Header = (props: Props) => {
           </button>
           <div className="dropdown-content">
             <a href="#link1">
-              <li> Eckige Töpfe</li>{" "}
+              <li> Chậu vuông</li>{" "}
             </a>
             <a href="#link2">
-              <li> Runde Töpfe</li>{" "}
+              <li> Chậu tròn</li>{" "}
             </a>
             <a href="#link3">
-              <li>Untersetzer</li>{" "}
+              <li>Đế lót ly</li>{" "}
             </a>
             <a href="#link3">
-              <li> Pflanzschalen</li>{" "}
+              <li>Chậu trồng cây</li>{" "}
             </a>
           </div>
         </div>
         <div className="dropdown ">
           <button className="dropbtn flex">
-            Bewässerung
+            Thủy lợi
             <svg
               className="w-2.5 h-2.5 ms-3 mt-[8px] "
               aria-hidden="true"
@@ -255,7 +267,7 @@ const Header = (props: Props) => {
         </div>
         <div className="dropdown ">
           <button className="dropbtn flex">
-            Pflanzen & Gärtnern
+            Cây & Làm vườn
             <svg
               className="w-2.5 h-2.5 ms-3 mt-[8px] "
               aria-hidden="true"
@@ -275,7 +287,7 @@ const Header = (props: Props) => {
         </div>
         <div className="dropdown ">
           <button className="dropbtn flex">
-            Lüftung & Klimaanlage
+            Thông gió & điều hòa không khí
             <svg
               className="w-2.5 h-2.5 ms-3 mt-[8px] "
               aria-hidden="true"

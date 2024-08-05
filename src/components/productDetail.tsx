@@ -4,30 +4,39 @@ import selectImg from "../layout/client/image/select-img.png";
 import star from "../layout/client/image/star.png";
 import star2 from "../layout/client/image/star2.png";
 import star3 from "../layout/client/image/star3.png";
+import { IProduct } from "../interface/product";
+import { useParams } from "react-router-dom";
 
-type Props = {};
+type Props = {
+  products: IProduct[];
+};
 
-const ProductDetail = (props: Props) => {
+const ProductDetail = ({ products }: Props) => {
+  const { id } = useParams<{ id: string }>();
+  const product = products.find((p) => p.id.toString() === id);
+  if (!product) {
+    return <div>Product not found</div>;
+  }
   return (
     <div>
       <div className="flex mt-[100px]  gap-[200px]">
         <div className="ml-[180px]">
-          <img src={pro5} alt="" className="w-[250px] h-[250px]" />
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-[300px] h-[300px]"
+          />
         </div>
         <div className="right-content">
-          <h3>Plant</h3>
-          <h1>Square cultivation pots 0.27 to 2 litres</h1>
-          <p className="text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the
-          </p>
+          <h3>{product.name}</h3>
+          <h1>{product.title}</h1>
+          <p className="text2">{product.deslow}</p>
+          <p className="text">{product.description}</p>
           <div className="price-all flex gap-[16px]">
-            <p className="price">$125.00</p>
+            <p className="price">${product.price}</p>
             <p className="sale ">50%</p>
           </div>
-
-          <p className="discount line line-through">$250.00</p>
+          <p className="discount line line-through">$1200.00</p>
           <div className="flex gap-[15px] mt-[15px]">
             <div className="up-down ">
               <a href="">
@@ -113,30 +122,31 @@ const ProductDetail = (props: Props) => {
                   </defs>
                 </svg>
               </div>
-              <a href="">Add to cart</a>
+              <a href="">Thêm vào giỏ hàng</a>
             </a>
           </div>
         </div>
       </div>
-      <div className="flex ml-[120px] gap-[10px] mb-[120px] ">
-        <img src={pro5} className=" w-[106px] h-[106px]" alt="" />
-        <img src={pro5} className="w-[106px] h-[106px]" alt="" />
-        <img src={selectImg} className="w-[106px] h-[106px]" alt="" />
+
+      <div className="flex ml-[150px] gap-[10px] mb-[120px] ">
+        <img src={product.image} className=" w-[106px] h-[106px]" alt="" />
+        <img src={product.image} className="w-[106px] h-[106px]" alt="" />
+        <img src={product.image} className="w-[106px] h-[106px]" alt="" />
       </div>
       <div className="description pl-[190px] mb-[57px]">
-        <h2>Discription </h2>
+        <h2>Mô tả </h2>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled i
+          Lorem Ipsum chỉ đơn giản là văn bản giả của việc in ấn và sắp chữ
+          ngành công nghiệp. Lorem Ipsum đã trở thành văn bản giả tiêu chuẩn của
+          ngành từ trước đến nay kể từ những năm 1500, khi một nhà in vô danh sử
+          dụng rất nhiều loại và tranh giành tôi
         </p>
-        <h2 className="mt-[30px]">About</h2>
+        <h2 className="mt-[30px]">Khác</h2>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled i
+          Lorem Ipsum chỉ đơn giản là văn bản giả của việc in ấn và sắp chữ
+          ngành công nghiệp. Lorem Ipsum đã trở thành văn bản giả tiêu chuẩn của
+          ngành từ trước đến nay kể từ những năm 1500, khi một nhà in vô danh sử
+          dụng rất nhiều loại và tranh giành tôi
         </p>
       </div>
       <div className="flex pl-[225px] gap-[350px]">
@@ -156,7 +166,7 @@ const ProductDetail = (props: Props) => {
             </div>
           </div>
         </div>
-        <button className="write">Write reviews</button>
+        <button className="write">Viết đánh giá</button>
       </div>
       <div className="ml-[222px]">
         <div className="flex rank gap-[5px]">
@@ -198,7 +208,7 @@ const ProductDetail = (props: Props) => {
       </div>
       <div className="comment pt-[48px] ml-[718px]">
         <div className="flex gap-[20px] comment-name">
-          <p>Aman gupta</p>
+          <p>Đỗ Tuấn Dương</p>
           <div className="flex">
             <img src={star3} alt="" className="w-[10px] h-[10px] mt-[8px]" />
             <img
@@ -213,18 +223,18 @@ const ProductDetail = (props: Props) => {
         </div>
         <div className="comment-text">
           <p>
-            I've been using this cleanser for about five or six months now and
-            my acne is almost completely gone. I really struggled for years with
-            my skin and tried everything possible but this is the only thing
-            that managed to clear up my skin. 100% recommend and will continue
-            to use is for sure.
+            Tôi đã sử dụng loại sữa rửa mặt này được khoảng năm hoặc sáu tháng
+            và mụn của tôi gần như đã biến mất hoàn toàn. Tôi thực sự phải vật
+            lộn với làn da của mình trong nhiều năm và đã thử mọi cách có thể
+            nhưng đây là điều duy nhất giúp tôi làm sạch làn da. 100% được giới
+            thiệu và chắc chắn sẽ tiếp tục sử dụng.
           </p>
         </div>
       </div>
       <div className="flex gap-[100px]">
         <div className="comment pt-[48px] ml-[236px]">
           <div className="flex gap-[20px] comment-name">
-            <p>Aman gupta</p>
+            <p>Hoàng Huy Long</p>
             <div className="flex">
               <img src={star3} alt="" className="w-[10px] h-[10px] mt-[8px]" />
               <img
@@ -239,17 +249,17 @@ const ProductDetail = (props: Props) => {
           </div>
           <div className="comment-text">
             <p>
-              I've been using this cleanser for about five or six months now and
-              my acne is almost completely gone. I really struggled for years
-              with my skin and tried everything possible but this is the only
-              thing that managed to clear up my skin. 100% recommend and will
-              continue to use is for sure.
+              Tôi đã sử dụng loại sữa rửa mặt này được khoảng năm hoặc sáu tháng
+              và mụn của tôi gần như đã biến mất hoàn toàn. Tôi thực sự phải vật
+              lộn với làn da của mình trong nhiều năm và đã thử mọi cách có thể
+              nhưng đây là điều duy nhất giúp tôi làm sạch làn da. 100% được
+              giới thiệu và chắc chắn sẽ tiếp tục sử dụng.
             </p>
           </div>
         </div>
         <div className="comment pt-[48px] ">
           <div className="flex gap-[20px] comment-name">
-            <p>Aman gupta</p>
+            <p>Nguyễn Hải Quân</p>
             <div className="flex">
               <img src={star3} alt="" className="w-[10px] h-[10px] mt-[8px]" />
               <img
@@ -264,21 +274,21 @@ const ProductDetail = (props: Props) => {
           </div>
           <div className="comment-text">
             <p>
-              I've been using this cleanser for about five or six months now and
-              my acne is almost completely gone. I really struggled for years
-              with my skin and tried everything possible but this is the only
-              thing that managed to clear up my skin. 100% recommend and will
-              continue to use is for sure.
+              Tôi đã sử dụng loại sữa rửa mặt này được khoảng năm hoặc sáu tháng
+              và mụn của tôi gần như đã biến mất hoàn toàn. Tôi thực sự phải vật
+              lộn với làn da của mình trong nhiều năm và đã thử mọi cách có thể
+              nhưng đây là điều duy nhất giúp tôi làm sạch làn da. 100% được
+              giới thiệu và chắc chắn sẽ tiếp tục sử dụng.
             </p>
           </div>
         </div>
       </div>
       <div className="see-comment mt-[38px] ">
-        <button>See all</button>
+        <button>Xem tất cả</button>
       </div>
       <div className="mb-[100px]">
         <div className="new3 flex">
-          Etwas abonnieren
+          Đăng ký một cái gì đó
           <div>
             {" "}
             <svg
@@ -321,12 +331,12 @@ const ProductDetail = (props: Props) => {
               stroke-width="4.67895"
             />
           </svg>
-          <div className="">Unser Newsletter</div>
+          <div className="">Bản tin của chúng tôi</div>
         </div>
         <div className=" relative flex">
           <p className="news-text">
-            Get weekly update about our product on your email, no spam
-            guaranteed we promise ✌️
+            Nhận cập nhật hàng tuần về sản phẩm của chúng tôi qua email của bạn,
+            không có thư rác đảm bảo chúng tôi hứa ✌️
           </p>
           <div className="relative w-[525px]  ">
             <input
@@ -341,7 +351,7 @@ const ProductDetail = (props: Props) => {
               data-twe-ripple-init
               data-twe-ripple-color="light"
             >
-              ABONNIEREN
+              Đăng ký
             </button>
           </div>
         </div>

@@ -82,12 +82,12 @@ const AddProductElement = ({ categories, onAdd }: Props) => {
         </div>
 
         <form
-          className="flex-1 p-6 bg-white shadow-md rounded-md space-y-4"
+          className="flex-1 p-8 bg-white shadow-lg rounded-lg space-y-6"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div>
+          <div className="space-y-1">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-800 text-sm font-semibold"
               htmlFor="name"
             >
               Tên sản phẩm
@@ -103,15 +103,16 @@ const AddProductElement = ({ categories, onAdd }: Props) => {
                 },
               })}
               placeholder="Tên sản phẩm"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200"
             />
             {errors.name && (
-              <p className="text-red-600 text-[12px]">{errors.name.message}</p>
+              <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
             )}
           </div>
-          <div>
+
+          <div className="space-y-1">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-800 text-sm font-semibold"
               htmlFor="image"
             >
               Ảnh sản phẩm
@@ -123,15 +124,18 @@ const AddProductElement = ({ categories, onAdd }: Props) => {
                 required: "Ảnh sản phẩm không được để trống",
               })}
               placeholder="Ảnh sản phẩm"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200"
             />
             {errors.image && (
-              <p className="text-red-600 text-[12px]">{errors.image.message}</p>
+              <p className="text-red-500 text-xs mt-1">
+                {errors.image.message}
+              </p>
             )}
           </div>
-          <div>
+
+          <div className="space-y-1">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-800 text-sm font-semibold"
               htmlFor="price"
             >
               Giá sản phẩm
@@ -144,15 +148,18 @@ const AddProductElement = ({ categories, onAdd }: Props) => {
                 min: { value: 1, message: "Giá sản phẩm phải lớn hơn 0" },
               })}
               placeholder="Giá sản phẩm"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200"
             />
             {errors.price && (
-              <p className="text-red-600 text-[12px]">{errors.price.message}</p>
+              <p className="text-red-500 text-xs mt-1">
+                {errors.price.message}
+              </p>
             )}
           </div>
-          <div>
+
+          <div className="space-y-1">
             <label
-              className="block text-gray-700 text-sm font-bold mb-2"
+              className="block text-gray-800 text-sm font-semibold"
               htmlFor="category"
             >
               Danh mục
@@ -162,7 +169,7 @@ const AddProductElement = ({ categories, onAdd }: Props) => {
               {...register("category", {
                 required: "Danh mục không được để trống",
               })}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200"
             >
               <option value="" disabled selected>
                 Chọn danh mục
@@ -174,14 +181,15 @@ const AddProductElement = ({ categories, onAdd }: Props) => {
               ))}
             </select>
             {errors.category && (
-              <p className="text-red-600 text-[12px]">
+              <p className="text-red-500 text-xs mt-1">
                 {errors.category.message}
               </p>
             )}
           </div>
+
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+            className="w-full py-3 px-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-200"
           >
             Thêm mới
           </button>

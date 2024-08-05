@@ -1,5 +1,7 @@
 export interface Tcate {
-  id?: string;
+  id: number;
   name: string;
+  image: string;
+  quantity: string;
 }
-export type formTypeC = Pick<Tcate, "name">;
+export type formTypeC = Pick<Tcate, "id" | "name" | "image" | "quantity">;

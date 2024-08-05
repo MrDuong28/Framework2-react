@@ -4,9 +4,7 @@ import Footer from "./client/footer";
 
 import { Outlet } from "react-router-dom";
 
-type Props = {};
-
-const Client = (props: Props) => {
+const Client = () => {
   return (
     <>
       <Header />

@@ -17,8 +17,9 @@ const Footer = (props: Props) => {
       <div className="flex gap-[67px] ">
         <div>
           <p className="w-[350px] pt-[82px] ml-[150px] footer-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua
+            Điều quan trọng là phải chăm sóc bệnh nhân, được bệnh nhân theo dõi,
+            nhưng điều đó sẽ xảy ra vào thời điểm có rất nhiều công việc và đau
+            đớn.
           </p>
           <div
             className="flex mt-[30px] gap-[40px] ml-[150px]
@@ -82,51 +83,51 @@ const Footer = (props: Props) => {
         </div>
         <div className="flex pt-[30px] gap-[92px]">
           <div className="list-none">
-            <ul className="footer-title">Um</ul>
+            <ul className="footer-title">Một</ul>
             <a>
-              <li> Kontaktiere uns</li>
+              <li> Liên hệ chúng tôi</li>
             </a>
             <a>
-              <li>Über uns </li>
+              <li>Về chúng tôi </li>
             </a>
             <a>
-              <li> Karriere</li>
+              <li> Sự nghiệp</li>
             </a>
             <a>
-              <li>Unternehmensinformationen</li>{" "}
+              <li>Thông tin công ty</li>{" "}
             </a>
           </div>
           <div className="list-none">
-            <ul className="footer-title">Hilfe</ul>
+            <ul className="footer-title">Giúp đỡ</ul>
             <a>
-              <li> Unsere Produzenten </li>
+              <li>Nhà sản xuất của chúng tôi</li>
             </a>
             <a>
-              <li>Zahlung</li>
+              <li>Chi trả</li>
             </a>
             <a>
-              <li> Versand</li>
+              <li> Lô hàng</li>
             </a>
             <a>
-              <li>Stornierung & Rückgabe</li>{" "}
+              <li>Hủy & Trả hàng</li>{" "}
             </a>{" "}
             <a>
-              <li>Verstoß melden</li>{" "}
+              <li>Báo cáo một sự vi phạm</li>{" "}
             </a>
           </div>
           <div className="list-none">
-            <ul className="footer-title">politik</ul>
+            <ul className="footer-title">Chính trị</ul>
             <a className="no-underline">
-              <li>Rücknahmegarantie</li>
+              <li>Đảm bảo hoàn trả</li>
             </a>
             <a>
-              <li>Nutzungsbedingungen </li>
+              <li>Điều khoản sử dụng </li>
             </a>
             <a>
-              <li>Privatsphäre</li>
+              <li>Sự riêng tư</li>
             </a>
             <a>
-              <li>Seitenverzeichnis</li>{" "}
+              <li>Thư mục trang</li>{" "}
             </a>
           </div>
         </div>
@@ -144,7 +145,7 @@ const Footer = (props: Props) => {
         "
         >
           <button id="backToTopBtn" onClick={scrollToTop}>
-            Scroll to top
+            Cuộn lên trên cùng
           </button>
           <svg
             xmlns="http://www.w3.org/2000/svg"

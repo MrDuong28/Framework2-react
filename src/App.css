@@ -579,6 +579,16 @@
   flex-shrink: 0;
   margin-bottom: 30px;
 }
+.right-content .text2 {
+  color: var(--Grayish-blue, #68707d);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 26px;
+  flex-shrink: 0;
+  margin-top: -50px;
+  margin-bottom: 20px;
+}
 .right-content .price {
   color: var(--Very-dark-blue, #1d2025);
   font-size: 30px;

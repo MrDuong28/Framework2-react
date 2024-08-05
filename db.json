@@ -5,6 +5,10 @@
       "image": "https://cdn.tgdd.vn/Products/Images/42/305660/iphone-15-pro-max-gold-thumbnew-600x600.jpg",
       "price": "850",
       "category": "Điện thoại",
+      "categoryId": 1,
+      "title": "Sản phẩm chất lượng",
+      "deslow": "512GB",
+      "description": "Màn hình iPhone 15 Pro có các góc bo tròn theo đường cong tuyệt đẹp và nằm gọn theo một hình chữ nhật chuẩn. Khi tính theo hình chữ nhật chuẩn, kích thước màn hình theo đường chéo là 6,12 inch (diện tích hiển thị thực tế nhỏ hơn).",
       "id": "2"
     },
     {
@@ -12,6 +16,9 @@
       "image": "https://product.hstatic.net/1000259254/product/macbook_pro_m2_gray_-1_90ed3468b4f4462fb5a254bf8313795f_master.jpg",
       "price": "800",
       "category": "Laptop",
+      "title": "Sản phẩm chất lượng",
+      "deslow": "512GB",
+      "description": "Màn hình iPhone 15 Pro có các góc bo tròn theo đường cong tuyệt đẹp và nằm gọn theo một hình chữ nhật chuẩn. Khi tính theo hình chữ nhật chuẩn, kích thước màn hình theo đường chéo là 6,12 inch (diện tích hiển thị thực tế nhỏ hơn).",
       "id": "3"
     },
     {
@@ -19,6 +26,9 @@
       "image": "https://www.droidshop.vn/wp-content/uploads/2022/03/Playstation-5-Tay-cam-PS5-Hong.jpg",
       "price": "500",
       "category": "Tay cầm",
+      "title": "Sản phẩm chất lượng",
+      "deslow": "512GB",
+      "description": "Màn hình iPhone 15 Pro có các góc bo tròn theo đường cong tuyệt đẹp và nằm gọn theo một hình chữ nhật chuẩn. Khi tính theo hình chữ nhật chuẩn, kích thước màn hình theo đường chéo là 6,12 inch (diện tích hiển thị thực tế nhỏ hơn).",
       "id": "4"
     },
     {
@@ -26,6 +36,9 @@
       "image": "https://seve7.vn/wp-content/uploads/2023/05/3-3-900x900.jpg",
       "price": "300",
       "category": "Bàn phím",
+      "title": "Sản phẩm chất lượng",
+      "deslow": "512GB",
+      "description": "Màn hình iPhone 15 Pro có các góc bo tròn theo đường cong tuyệt đẹp và nằm gọn theo một hình chữ nhật chuẩn. Khi tính theo hình chữ nhật chuẩn, kích thước màn hình theo đường chéo là 6,12 inch (diện tích hiển thị thực tế nhỏ hơn).",
       "id": "5"
     },
     {
@@ -33,6 +46,9 @@
       "image": "https://cdn.tgdd.vn/Products/Images/54/236026/airpods-pro-wireless-charge-apple-mwp22-ava-1-org.jpg",
       "price": "400",
       "category": "Tai nghe",
+      "title": "Sản phẩm chất lượng",
+      "deslow": "512GB",
+      "description": "Màn hình iPhone 15 Pro có các góc bo tròn theo đường cong tuyệt đẹp và nằm gọn theo một hình chữ nhật chuẩn. Khi tính theo hình chữ nhật chuẩn, kích thước màn hình theo đường chéo là 6,12 inch (diện tích hiển thị thực tế nhỏ hơn).",
       "id": "7"
     },
     {
@@ -40,6 +56,9 @@
       "image": "https://shopdunk.com/images/thumbs/0008092_iphone-14-pro-max-256gb.png",
       "price": "500",
       "category": "Điện thoại",
+      "title": "Sản phẩm chất lượng",
+      "deslow": "512GB",
+      "description": "Màn hình iPhone 15 Pro có các góc bo tròn theo đường cong tuyệt đẹp và nằm gọn theo một hình chữ nhật chuẩn. Khi tính theo hình chữ nhật chuẩn, kích thước màn hình theo đường chéo là 6,12 inch (diện tích hiển thị thực tế nhỏ hơn).",
       "id": "67ae"
     },
     {
@@ -47,6 +66,9 @@
       "image": "https://file.hstatic.net/200000722513/article/laptop-gaming_3c90b72fdfb1438ca435c82b16416b3c_323c8099e3b3409d97c208cc21d8e584_master.jpg",
       "price": "500",
       "category": "Laptop",
+      "title": "Sản phẩm chất lượng",
+      "deslow": "512GB",
+      "description": "Màn hình iPhone 15 Pro có các góc bo tròn theo đường cong tuyệt đẹp và nằm gọn theo một hình chữ nhật chuẩn. Khi tính theo hình chữ nhật chuẩn, kích thước màn hình theo đường chéo là 6,12 inch (diện tích hiển thị thực tế nhỏ hơn).",
       "id": "f07c"
     },
     {
@@ -54,6 +76,9 @@
       "image": "https://img.lazcdn.com/g/p/52873cf6a5040af0732ec77f606b9b63.png_720x720q80.png",
       "price": "300",
       "category": "Tay cầm",
+      "title": "Sản phẩm chất lượng",
+      "deslow": "512GB",
+      "description": "Màn hình iPhone 15 Pro có các góc bo tròn theo đường cong tuyệt đẹp và nằm gọn theo một hình chữ nhật chuẩn. Khi tính theo hình chữ nhật chuẩn, kích thước màn hình theo đường chéo là 6,12 inch (diện tích hiển thị thực tế nhỏ hơn).",
       "id": "8c92"
     },
     {
@@ -74,23 +99,71 @@
   "categories": [
     {
       "name": "Điện thoại",
-      "id": "8ae9"
+      "image": "https://hpcluxury.com.vn/wp-content/uploads/2023/09/Vu%C3%B4ng-Prime-Gold-V%C3%A0ng-h%E1%BB%93ng-full-kim-c%C6%B0%C6%A1ng.jpg",
+      "quantity": "2",
+      "id": "8"
     },
     {
       "name": "Laptop",
-      "id": "8bef"
+      "image": "https://cdn.arstechnica.net/wp-content/uploads/2023/06/IMG_1134.jpeg",
+      "quantity": "2",
+      "id": "1"
     },
     {
-      "id": "e1dc",
-      "name": "Tay cầm"
+      "name": "Tay cầm",
+      "image": "https://npcshop.vn/media/product/6664-sony-ps5-dualsense-edge-wireless-controller--7-.jpg",
+      "quantity": "2",
+      "id": "2"
     },
     {
       "name": "Bàn phím",
-      "id": "6e76"
+      "image": "https://pos.nvncdn.com/5f3840-119888/ps/20230809_oEEGJG30hK.png",
+      "quantity": "2",
+      "id": "3"
     },
     {
-      "id": "b56c",
-      "name": "Tai nghe"
+      "name": "Tai nghe",
+      "image": "https://img.lazcdn.com/g/p/4f5f7385c85baf7238488176e6fe4aa9.jpg_720x720q80.jpg",
+      "quantity": "2",
+      "id": "4"
+    },
+    {
+      "name": "Chuột máy tính",
+      "image": "https://down-vn.img.susercontent.com/file/fc59aa1ef27d82a48523cf492159abf5",
+      "quantity": "2",
+      "id": "5"
+    },
+    {
+      "name": "Màn hình",
+      "image": "https://danviet.mediacdn.vn/upload/2-2018/images/2018-06-23/s2719h_1-1529692935-width660height549.jpg",
+      "quantity": "2",
+      "id": "6"
+    },
+    {
+      "name": "Đồng hồ",
+      "image": "https://cdn11.dienmaycholon.vn/filewebdmclnew/public/userupload/files/dong-ho-thong-minh-chong-nuoc-applewatch_se_2022.jpg",
+      "quantity": "3",
+      "id": "7"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$qAQcQHQrEe3DPdaspehWVuJv7sCBBZkvkEBy6In/F7HEI8.vtwbDC",
+      "name": "Đỗ Tuấn Dương",
+      "id": 1
+    },
+    {
+      "email": "dotuanduong27@gmail.com",
+      "password": "$2a$10$7v18GUKj07JGFJMZg/g53.qLFeeG3gZYL.PSCMTIhZz8I9PVKBakm",
+      "name": "Đỗ Tuấn Dương",
+      "id": 2
+    },
+    {
+      "email": "mrduong28@gmail.com",
+      "password": "$2a$10$09xjITCBDvk9Q/Br/cjtL..k2jSmMHN3yiMWEkb7y9qsKCifZZl9.",
+      "name": "Duong",
+      "id": 3
     }
   ]
 }

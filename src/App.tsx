@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Component, useEffect, useState } from "react";
 import { Route, Routes, useRoutes } from "react-router-dom";
 
 import "./App.css";
@@ -20,8 +20,16 @@ import { Tcate } from "./interface/cate";
 import CategoryList from "./components/categoryList";
 import { AddCategories, GetAllCategory, updateCategory } from "./service/cate";
 import EditCategory from "./components/categoryEdit";
-type formType = Pick<IProduct, "name" | "price" | "image" | "category">;
-type formTypeC = Pick<Tcate, "name">;
+import Search from "./components/search";
+import CategoryId from "./components/categoryID";
+import Register from "./components/register";
+import Login from "./components/login";
+import PrivateRouter from "./privateRouter";
+type formType = Pick<
+  IProduct,
+  "categoryId" | "name" | "price" | "image" | "category"
+>;
+type formTypeC = Pick<Tcate, "id" | "name" | "image" | "quantity">;
 
 function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -29,6 +37,7 @@ function App() {
   const { register, handleSubmit, reset } = useForm<formType>();
   const [flag, setFlag] = useState<string | number>(0);
   const [click, setClick] = useState<boolean>(false);
+
   useEffect(() => {
     (async () => {
       const data = await GetAllProduct();
@@ -132,12 +141,26 @@ function App() {
       path: "",
       Component: Client,
       children: [
-        { path: "/", element: <Home /> },
+        {
+          path: "/",
+          element: <Home products={products} categories={categories} />,
+        },
+        {
+          path: "/search",
+          element: <Search />,
+        },
         {
           path: "/product",
-          element: <ProductPage onDelete={onDelete} products={products} />,
+          element: <ProductPage products={products} />,
         },
-        { path: "/productdetail", element: <ProductDetail /> },
+        {
+          path: "/category/:id ",
+          element: <CategoryId products={products} categories={categories} />,
+        },
+        {
+          path: "productdetail/:id",
+          element: <ProductDetail products={products} />,
+        },
       ],
     },
     {
@@ -146,7 +169,14 @@ function App() {
       Component: Dashboard,
 
       children: [
-        { path: "admin", element: <Admin /> },
+        {
+          path: "admin",
+          element: (
+            <PrivateRouter>
+              <Admin />
+            </PrivateRouter>
+          ),
+        },
         {
           path: "productlist",
           element: <ProductList onDelete={onDelete} products={products} />,
@@ -180,6 +210,15 @@ function App() {
           element: (
             <CategoryList onDelete={onDeleteCate} categories={categories} />
           ),
+        },
+
+        {
+          path: "register",
+          element: <Register />,
+        },
+        {
+          path: "login",
+          element: <Login />,
         },
       ],
     },

@@ -1,45 +1,30 @@
-import React from "react";
-import productImg1 from "../layout/client/image/img1.png";
-import productImg2 from "../layout/client/image/img2.png";
-import productImg3 from "../layout/client/image/img3.png";
-import productImg4 from "../layout/client/image/img4.png";
 import productImg5 from "../layout/client/image/img5.png";
 import productImg6 from "../layout/client/image/img6.png";
 import productImg7 from "../layout/client/image/img7.png";
 import productImg8 from "../layout/client/image/img8.png";
 import productImg9 from "../layout/client/image/img9.png";
 import bannerImage from "../layout/client/image/banner.png";
-import productImage1 from "../layout/client/image/product3-1.png";
-import productImage2 from "../layout/client/image/product3-2.png";
-import productImage3 from "../layout/client/image/product3-3.png";
-import productImage4 from "../layout/client/image/product3-4.png";
-import productImage5 from "../layout/client/image/product3-5.png";
-import productImage6 from "../layout/client/image/product3-6.png";
-import productImage7 from "../layout/client/image/product3-7.png";
-import productImage8 from "../layout/client/image/product3-8.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-type Props = {};
+import { IProduct } from "../interface/product";
+import { Tcate } from "../interface/cate";
+import { Link } from "react-router-dom";
+type Props = {
+  products: IProduct[];
+  categories: Tcate[];
+};
 
-const Home = (props: Props) => {
+const Home = ({ products, categories }: Props) => {
+  const limitedProducts = products.slice(0, 4);
   var settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  const categories = [
-    { src: productImage1, text: "Beleuchtung", items: 30 },
-    { src: productImage2, text: "Dünger", items: 20 },
-    { src: productImage3, text: "Erde & Substrate", items: 20 },
-    { src: productImage4, text: "Bewässerung", items: 20 },
-    { src: productImage5, text: "Töpfe & Behälter", items: 20 },
-    { src: productImage6, text: "Growbox", items: 20 },
-    { src: productImage7, text: "Pflanzen & Gärtnern", items: 30 },
-    { src: productImage8, text: "Lüftung & Klimaanlage", items: 20 },
-  ];
+
   return (
     <>
       <div className="home">
@@ -53,12 +38,12 @@ const Home = (props: Props) => {
               />
               <div className="banner-content">
                 <h1 className="title">
-                  Wir kümmern uns um Ihre schöner Garten und Haus
+                  Chúng tôi chăm sóc khu vườn và ngôi nhà xinh đẹp của bạn
                 </h1>
                 <p className="read">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s,
+                  Lorem Ipsum chỉ đơn giản là văn bản giả được in và ngành sắp
+                  chữ. Lorem Ipsum là người đứng đầu ngành văn bản giả tiêu
+                  chuẩn kể từ những năm 1500,
                 </p>
                 <div className="banner-btn">
                   <a>Lern mehr</a>
@@ -75,12 +60,12 @@ const Home = (props: Props) => {
               />
               <div className="banner-content  ">
                 <h1 className="title">
-                  Wir kümmern uns um Ihre schöner Garten und Haus
+                  Chúng tôi chăm sóc khu vườn và ngôi nhà xinh đẹp của bạn
                 </h1>
                 <p className="read">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s,
+                  Lorem Ipsum chỉ đơn giản là văn bản giả được in và ngành sắp
+                  chữ. Lorem Ipsum là người đứng đầu ngành văn bản giả tiêu
+                  chuẩn kể từ những năm 1500,
                 </p>
                 <div className="banner-btn">
                   <a>Lern mehr</a>
@@ -97,12 +82,12 @@ const Home = (props: Props) => {
               />
               <div className="banner-content">
                 <h1 className="title">
-                  Wir kümmern uns um Ihre schöner Garten und Haus
+                  Chúng tôi chăm sóc khu vườn và ngôi nhà xinh đẹp của bạn
                 </h1>
                 <p className="read">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s,
+                  Lorem Ipsum chỉ đơn giản là văn bản giả được in và ngành sắp
+                  chữ. Lorem Ipsum là người đứng đầu ngành văn bản giả tiêu
+                  chuẩn kể từ những năm 1500,
                 </p>
                 <div className="banner-btn">
                   <a>Lern mehr</a>
@@ -111,48 +96,27 @@ const Home = (props: Props) => {
             </div>
           </div>
         </Slider>
-        <h1 className="news">Best sellers</h1>
+        <h1 className="news">Bán chạy nhất</h1>
 
-        <div className="products flex ">
-          <div className="product">
-            <img className="w-[200px] h-[200px]" src={productImg1} alt="" />
-            <h3 className="product-name">Growbox</h3>
-            <div className="flex justify-between mt-[7px]">
-              <p className="product-title">Dress</p>
-              <p className="product-price">$ 963.85</p>
-            </div>
-          </div>
-          <div className="product">
-            <img className="w-[200px] h-[200px]" src={productImg2} alt="" />
-            <h3 className="product-name">Töpfe</h3>
-            <div className="flex justify-between mt-[7px]">
-              <p className="product-title">5 by 5 pots for planting</p>
-              <p className="product-price">$ 6130.00</p>
-            </div>
-          </div>
-          <div className="product">
-            <img className="w-[200px] h-[200px]" src={productImg3} alt="" />
-            <h3 className="product-name">Lichthänger-Set</h3>
-            <div className="flex justify-between mt-[7px]">
-              <p className="product-title">Light-hanger set </p>
-              <p className="product-price">$ 753.00</p>
-            </div>
-          </div>
-          <div className="product">
-            <p className="sale bg-[#1E2832] w-[47.393px] h-[21.874px] float-left  ">
-              SALE
-            </p>
-            <img className="w-[200px] h-[200px]" src={productImg4} alt="" />
-            <h3 className="product-name">Licht</h3>
-            <div className="flex justify-between mt-[7px]">
-              <p className="product-title">Dress</p>
-              <div className="flex gap-[15px]">
-                {" "}
-                <p className="price-sale">$ 2364.00</p>
-                <p className="product-price text-red-600">$ 1155.00</p>
+        <div className="products flex gap-[100px] pt-[70px] pl-[120px]">
+          {limitedProducts.map((product) => (
+            <div key={product.id} className="bg-white overflow-hidden ">
+              <Link to={`/productdetail/${product.id}`}>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-[200px] h-[200px] object-cover transition-transform duration-300 ease-in-out transform hover:scale-110"
+                />
+              </Link>
+              <div className="p-4">
+                <h3 className="product-name text-lg font-bold">
+                  {product.name}
+                </h3>
+                <p className="text-gray-600">${product.price}</p>
+                {/* <p className="text-gray-600">Category: {product.category}</p> */}
               </div>
             </div>
-          </div>
+          ))}
         </div>
         <div className="flex-container mb-[73px]">
           <div className="product-container-left">
@@ -161,47 +125,47 @@ const Home = (props: Props) => {
               alt="Product"
               className="w-[550px] h-[477px] "
             />
-            <div className="product-text">garten spaten</div>
+            <div className="product-text">Xẻng làm vườn</div>
           </div>
           <div className="product-container-right grid-container ">
             <div className="grid-item">
               <img src={productImg6} alt="Product" className="grid-image" />
-              <div className="product-text-right">sand</div>
+              <div className="product-text-right">Cát</div>
             </div>
             <div className="grid-item">
               <img src={productImg7} alt="Product" className="grid-image" />
-              <div className="product-text-right">pflanzer</div>
+              <div className="product-text-right">Hộp</div>
             </div>
             <div className="grid-item">
               <img src={productImg8} alt="Product" className="grid-image" />
-              <div className="product-text-right">schlammkuchen</div>
+              <div className="product-text-right">Bánh bùn</div>
             </div>
             <div className="grid-item">
               <img src={productImg9} alt="Product" className="grid-image" />
-              <div className="product-text-right">klemmen</div>
+              <div className="product-text-right">Cái kẹp</div>
             </div>
           </div>
         </div>
 
-        <h1 className="news2 mb-[21px]">Kategorien</h1>
+        <h1 className="news2 mb-[21px]">Danh mục</h1>
         <hr />
         <div className="category">
           {categories.map((category, index) => (
             <div key={index} className="cat1">
               <img
-                src={category.src}
+                src={category.image}
                 alt="Product"
                 className="category-image"
               />
               <div className="text-category">
-                {category.text}
-                <p>{category.items} items</p>
+                {category.name}
+                <p className="font-light">{category.quantity} Items</p>
               </div>
             </div>
           ))}
         </div>
         <div className="new3 flex">
-          Etwas abonnieren
+          Đăng ký một cái gì đó
           <div>
             {" "}
             <svg
@@ -244,12 +208,12 @@ const Home = (props: Props) => {
               stroke-width="4.67895"
             />
           </svg>
-          <div className="">Unser Newsletter</div>
+          <div className="">Bản tin của chúng tôi</div>
         </div>
         <div className=" relative flex">
           <p className="news-text">
-            Get weekly update about our product on your email, no spam
-            guaranteed we promise ✌️
+            Nhận cập nhật hàng tuần về sản phẩm của chúng tôi qua email của bạn,
+            không có thư rác đảm bảo chúng tôi hứa ✌️
           </p>
           <div className="relative w-[525px]  ">
             <input
@@ -264,7 +228,7 @@ const Home = (props: Props) => {
               data-twe-ripple-init
               data-twe-ripple-color="light"
             >
-              ABONNIEREN
+              ĐĂNG KÝ
             </button>
           </div>
         </div>

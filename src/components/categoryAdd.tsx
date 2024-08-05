@@ -107,6 +107,47 @@ const AddCategory = ({ onAdd }: Props) => {
               <p className="text-red-600 text-[12px]">{errors.name.message}</p>
             )}
           </div>
+          <div>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="name"
+            >
+              Ảnh
+            </label>
+            <input
+              type="text"
+              {...register("image", {
+                required: "Ảnh không được để trống",
+              })}
+              placeholder="Ảnh"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            />
+            {errors.image && (
+              <p className="text-red-600 text-[12px]">{errors.image.message}</p>
+            )}
+          </div>
+          <div>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="name"
+            >
+              Số lượng
+            </label>
+            <input
+              type="text"
+              id="name"
+              {...register("quantity", {
+                required: "Số lượng không được để trống",
+              })}
+              placeholder="Số lượng"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-300"
+            />
+            {errors.quantity && (
+              <p className="text-red-600 text-[12px]">
+                {errors.quantity.message}
+              </p>
+            )}
+          </div>
           <button
             type="submit"
             className="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
